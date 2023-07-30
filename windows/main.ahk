@@ -1,9 +1,13 @@
 ﻿; F14(無変換): IME無効化, 汎用ホットキー
-; F15(変換): IME有効化
+; 右シフト(変換): IME有効化
 
 ; IME
 F14 Up::Send,{vk1D} ; F14 Up: IME無効化
-F15::vk1C ; F15: IME有効化
+~RShift Up:: ; 右シフト: 単独でリリースしたとき、IME有効化
+    If (A_PriorKey == "RShift") {
+        Send,{vk1C}
+    }
+Return
 
 ; カーソル
 F14 & h::Send,{Blind}{Left} ; F14 + h: 左カーソル
