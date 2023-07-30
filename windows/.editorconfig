@@ -9,3 +9,6 @@ indent_size = 4
 end_of_line = crlf # LFにするとAHKでコメントの次の行が認識されない
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+[*.ahk]
+charset = utf-8-bom
