@@ -5,7 +5,7 @@ JIS配列キーボードを前提とする。
 
 ## 設定方法
 
-* Linux(WIP)
+* [Linux](linux/README.md)
 * [Windows](windows/README.md)
 
 ## ホットキー一覧

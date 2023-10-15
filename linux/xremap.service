@@ -1,0 +1,9 @@
+[Unit]
+Description=xremap
+
+[Service]
+Restart=always
+ExecStart=xremap /home/k/Desktop/a/xremap.yaml --watch
+
+[Install]
+WantedBy=multi-user.target

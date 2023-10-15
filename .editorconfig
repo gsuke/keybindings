@@ -10,14 +10,16 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.json]
+# Common
+[{*.json,*.yaml,*.yml}]
 indent_size = 2
 
+# Linux
+[*.hwdb]
+indent_size = 1
+
 # Windows
+[{*.ahk,*.ini,keymap.txt}]
+end_of_line = crlf
 [*.ahk]
 charset = utf-8-bom
-end_of_line = crlf
-[*.ini]
-end_of_line = crlf
-[keymap.txt]
-end_of_line = crlf
