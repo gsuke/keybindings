@@ -8,3 +8,4 @@ EasyTrayTip("gsuke/keybindings/windows/main.ahk を起動しました。")
 
 ; ホットキーのインポート
 #Include, common_hotkeys.ahk
+#Include, local_hotkeys.ahk
