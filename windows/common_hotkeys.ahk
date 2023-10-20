@@ -23,3 +23,6 @@ F14 & e::Send,{Blind}{End}
 F14 & Space::Send,{Blind}{Enter}
 F14 & vkBB::Send,{Blind}{BackSpace} ; 無変換 + セミコロン
 F14 & vkBA::Send,{Blind}{Del} ; 無変換 + コロン
+
+; リロード
+F14 & r::Reload
