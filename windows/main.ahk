@@ -1,1 +1,3 @@
-﻿#Include, common_hotkeys.ahk
+﻿#SingleInstance, force
+
+#Include, common_hotkeys.ahk
