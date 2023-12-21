@@ -8,10 +8,10 @@
 
 導入方法
 
-* Arch Linuxの場合: `paru -S fcitx5-mozc evtest xremap-x11-bin`
+* Arch Linuxの場合: `paru -S fcitx5-mozc fcitx5-configtool evtest xremap-x11-bin`
 * それ以外の場合: <https://github.com/k0kubun/xremap/releases> からXremapのバイナリをダウンロードし、 `/usr/local/bin/` 配下に格納
 
-## 1. Mozc
+## 1. Fcitx5
 
 1. Fcitx5の設定画面を開く
 2. 入力メソッドを切り替える系のホットキーをすべて削除する
