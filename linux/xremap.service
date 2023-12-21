@@ -3,7 +3,7 @@ Description=xremap
 
 [Service]
 Restart=always
-ExecStart=xremap /home/k/Desktop/a/xremap.yaml --watch
+ExecStart=xremap /usr/local/etc/xremap.yaml --watch
 
 [Install]
 WantedBy=multi-user.target
