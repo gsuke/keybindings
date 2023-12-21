@@ -8,7 +8,7 @@
 
 導入方法
 
-* Arch Linuxの場合: `paru -S fcitx5-mozc fcitx5-configtool evtest xremap-x11-bin`
+* Arch Linuxの場合: `paru -S fcitx5-mozc fcitx5-im evtest xremap-x11-bin`
 * それ以外の場合: <https://github.com/k0kubun/xremap/releases> からXremapのバイナリをダウンロードし、 `/usr/local/bin/` 配下に格納
 
 ## 1. Fcitx5
