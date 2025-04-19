@@ -1,18 +1,14 @@
 ﻿/*
 TrayTip をシンプルにするためのラッパー関数
-
-- テキストだけを指定する
-- すぐに閉じる
+指定したテキストを表示したあと、1秒後に閉じる。
 */
-
 EasyTrayTip(Text) {
-    TrayTip, , %Text%, , 16
+    TrayTip(Text, , 16) ; No icon / No notify sound
 
-    SetTimer, CloseTrayTip, 1000
-    Return
+    SetTimer(CloseTrayTip, 1000)
 
-    CloseTrayTip:
+    CloseTrayTip() {
         TrayTip
-        SetTimer, CloseTrayTip, Off
-    Return
+        SetTimer(CloseTrayTip, 0) ; exit timer
+    }
 }
