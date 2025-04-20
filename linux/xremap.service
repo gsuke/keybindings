@@ -1,9 +1,0 @@
-[Unit]
-Description=xremap
-
-[Service]
-Restart=always
-ExecStart=xremap /usr/local/etc/xremap.yaml --watch
-
-[Install]
-WantedBy=multi-user.target

@@ -1,5 +1,5 @@
 ﻿; F14 -> 無変換
-; 右シフト -> 変換
+; 右Shift -> 変換
 
 ; 単押し
 ~LControl Up:: SingleTap("LControl", "{Escape}") ; エスケープ

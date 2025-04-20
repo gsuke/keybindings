@@ -1,55 +1,38 @@
 # Gsuke Keybindings - Linux 設定方法
 
-## 必要なもの
+## 必要なパッケージ
 
 * fcitx5-mozc
-* evtest
-* xremap
+* keyd
 
 導入方法
 
-* Arch Linuxの場合: `paru -S fcitx5-mozc fcitx5-im evtest xremap-x11-bin`
-* それ以外の場合: <https://github.com/k0kubun/xremap/releases> からXremapのバイナリをダウンロードし、 `/usr/local/bin/` 配下に格納
+* Arch Linuxの場合: `paru -S fcitx5-mozc fcitx5-im keyd`
 
 ## 1. Fcitx5
 
-1. Fcitx5の設定画面を開く
-2. 入力メソッドを切り替える系のホットキーをすべて削除する
-3. 以下のように割り当てる
+1. (keydが動作している場合は、事前に `sudo systemctl stop keyd` で停止する。)
+2. Fcitx5の設定画面を開く。
+3. 入力メソッドを切り替える系のホットキーをすべて削除する。
+4. 以下のように割り当てる
    * 入力メソッドを有効にする: 変換
    * 入力メソッドをオフにする: 無変換
 
-## 2. hwdb
+## 2. Mozc
 
-1. evtestを起動: `sudo evtest`
+### 設定手順
 
-2. キーボードデバイスを選択
+1. Fcitx5の設定画面 > 入力メソッド > Mozc > 設定アイコン > 設定ツール でMozcの設定画面を開く。
+2. キー設定の選択 > 編集 をクリックし、キー設定画面を開く。
+3. 編集 > インポート から keymap.txt をインポートする。
 
-3. 以下のスキャンコードを調べる。必要に応じて [10-main.hwdb](10-main.hwdb) を修正する。
-   * CapsLock
-   * 半角／全角
-   * 無変換
-   * 変換
-   * カタカナひらがなローマ字
+### 上記手順の設定内容
 
-4. Ctrl+Cでevtestを終了
+* Hankaku, Zenkaku, Muhenkan, Henkan, Katakana, Hiragana のキー設定を削除する。
+* IMEのオンオフキーコマンドを削除する。
 
-5. hwdbファイルのリンクを作成: `sudo ln -s /フルパス/10-main.hwdb /etc/udev/hwdb.d/10-main.hwdb`
+## 3. keyd
 
-6. 変更の反映
-   1. `sudo systemd-hwdb update`
-   2. `sudo udevadm trigger`
-
-7. evtestで変更が正しく反映されているか確認: `sudo evtest`
-
-## 3. Xremap
-
-1. シンボリックリンクを張る
-   * `sudo ln -s /フルパス/xremap.yaml /usr/local/etc/xremap.yaml`
-   * `sudo ln -s /フルパス/xremap.service /etc/systemd/system/xremap.service`
-
-2. サービスを起動する
-   1. unitファイル変更を反映: `sudo systemctl daemon-reload`
-   2. `sudo systemctl enable xremap`
-   3. `sudo systemctl start xremap`
-   4. 起動できているか確認: `systemctl status xremap`
+1. `sudo systemctl enable keyd`
+2. 設定ファイルをシンボリックリンクで配置する。: `sudo ln -s $(realpath default.conf) /etc/keyd/default.conf`
+3. `sudo systemctl restart keyd`
