@@ -12,7 +12,7 @@
 ## 1. Fcitx5
 
 1. (keydが動作している場合は、事前に `sudo systemctl stop keyd` で停止する。)
-2. Fcitx5の設定画面を開く。
+2. Fcitx5の設定 > グローバルオプション を開く。
 3. 入力メソッドを切り替える系のホットキーをすべて削除する。
 4. 以下のように割り当てる
    * 入力メソッドを有効にする: 変換
@@ -34,5 +34,5 @@
 ## 3. keyd
 
 1. `sudo systemctl enable keyd`
-2. 設定ファイルをシンボリックリンクで配置する。: `sudo ln -s $(realpath default.conf) /etc/keyd/default.conf`
+2. 設定ファイルを配置する。: `sudo cp default.conf /etc/keyd/default.conf`
 3. `sudo systemctl restart keyd`
