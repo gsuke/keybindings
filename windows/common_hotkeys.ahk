@@ -20,5 +20,4 @@ F14 & vkBB:: Send("{Blind}{BackSpace}") ; 無変換 + セミコロン
 F14 & vkBA:: Send("{Blind}{Del}") ; 無変換 + コロン
 
 ; その他
-F14 & w:: Send("!{F4}") ; ウィンドウを閉じる
 F14 & r:: Reload ; スクリプトを再起動する
