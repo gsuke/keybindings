@@ -2,7 +2,6 @@
 ; 右Shift -> 変換
 
 ; 単押し
-~LControl Up:: SingleTap("LControl", "{Escape}") ; エスケープ
 ~F14 Up:: SingleTap("F14", "{vk1D}") ; IMEオフ (無変換)
 ~RShift Up:: SingleTap("RShift", "{vk1C}") ; IMEオン (変換)
 
