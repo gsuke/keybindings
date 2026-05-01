@@ -1,13 +1,11 @@
 # Gsuke Keybindings - Linux 設定方法
 
-## 必要なパッケージ
+## Requirements
+
+`paru -S fcitx5-mozc fcitx5-im keyd`
 
 * fcitx5-mozc
 * keyd
-
-導入方法
-
-* Arch Linuxの場合: `paru -S fcitx5-mozc fcitx5-im keyd`
 
 ## 1. Fcitx5
 
@@ -39,13 +37,6 @@
 
 ## 4. keyd - アプリケーション固有
 
-1. 設定ファイルを配置する。
-   1. `mkdir ~/.config/keyd`
-   2. `ln -s "$(pwd)/app.conf" ~/.config/keyd/app.conf`
-2. Gnome拡張を配置する。: `cp -r /usr/share/keyd/gnome-extension-45 ~/.local/share/gnome-shell/extensions/keyd`
-3. 対応バージョンを追加する。
-   1. `gnome-shell --version` でGnomeのバージョンを確認する。
-   2. `sudo nano ~/.local/share/gnome-shell/extensions/keyd/metadata.json`
-   3. `"shell-versions"` に調べたバージョンを追加して保存する。
-4. Gnome再ログイン
-5. `gnome-extensions enable keyd` -> `gnome-extensions show keyd`
+1. `sudo usermod -aG keyd "$USER"`
+2. `mkdir ~/.config/keyd`
+3. `ln -sv "$(realpath app.conf)" "$HOME/.config/keyd/app.conf"`
