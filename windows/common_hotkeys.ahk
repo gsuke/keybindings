@@ -28,4 +28,9 @@ F13 & vkBB:: Send("{Blind}{BackSpace}") ; 無変換 + セミコロン
 F13 & vkBA:: Send("{Blind}{Del}") ; 無変換 + コロン
 
 ; その他
+
+; Ctrl + Shift + \ → |
+; Remminaから￥キーを送信できない問題への対処
+^+vkE2:: Send("|")
+
 F13 & r:: Reload ; スクリプトを再起動する
