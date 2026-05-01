@@ -39,9 +39,31 @@
 
 ### 4. keyd - アプリケーション固有
 
-1. `sudo usermod -aG keyd "$USER"`
-2. `mkdir ~/.config/keyd`
-3. `ln -sv "$(realpath app.conf)" "$HOME/.config/keyd/app.conf"`
+1. グループに参加する。
+   ```
+   sudo usermod -aG keyd "$USER"
+   groups
+   ```
+2. 設定ファイルを配置する。
+   ```
+   mkdir ~/.config/keyd
+   ln -sv "$(realpath app.conf)" "$HOME/.config/keyd/app.conf"
+   ```
+3. `keyd-application-mapper -d` の出力を参考に、Gnome拡張を配置する。
+   1. 拡張機能を配置する。
+   ```
+   mkdir -p ~/.local/share/gnome-shell/extensions
+   ln -s /usr/share/keyd/gnome-extension-45 ~/.local/share/gnome-shell/extensions/keyd@keyd.rvaiya.github.com
+   ```
+   2. `gnome-shell --version` でGnomeのバージョンを確認する。
+   3. `sudo nano /usr/share/keyd/gnome-extension-45/metadata.json`
+   4. `"shell-versions"` に調べたバージョンを追加して保存する。
+4. Gnome再ログイン: `gnome-session-quit --logout`
+5. 拡張機能を有効化する。
+   ```
+   gnome-extensions enable keyd@keyd.rvaiya.github.com
+   gnome-extensions show keyd@keyd.rvaiya.github.com
+   ```
 
 ## Debug
 
