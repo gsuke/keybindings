@@ -74,7 +74,6 @@ Composition	ESC	Cancel
 Conversion	ESC	Cancel
 Composition	F10	ConvertToHalfAlphanumeric
 Conversion	F10	ConvertToHalfAlphanumeric
-DirectInput	F13	IMEOn
 Composition	F2	ConvertWithoutHistory
 Composition	F6	ConvertToHiragana
 Conversion	F6	ConvertToHiragana

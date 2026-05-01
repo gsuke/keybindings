@@ -11,7 +11,7 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 # Windows
-[{*.ahk,*.ini,keymap.txt}]
+[{*.ahk,keymap.txt}]
 end_of_line = crlf
 [*.ahk]
 charset = utf-8-bom

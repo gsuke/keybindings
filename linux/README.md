@@ -7,7 +7,9 @@
 * fcitx5-mozc
 * keyd
 
-## 1. Fcitx5
+## 設定方法
+
+### 1. Fcitx5
 
 1. (keydが動作している場合は、事前に `sudo systemctl stop keyd` で停止する。)
 2. Fcitx5の設定 > グローバルオプション を開く。
@@ -16,27 +18,33 @@
    * 入力メソッドを有効にする: 変換
    * 入力メソッドをオフにする: 無変換
 
-## 2. Mozc
+### 2. Mozc
 
-### 設定手順
+#### 設定手順
 
 1. Fcitx5の設定画面 > 入力メソッド > Mozc > 設定アイコン > 設定ツール でMozcの設定画面を開く。
 2. キー設定の選択 > 編集 をクリックし、キー設定画面を開く。
 3. 編集 > インポート から keymap.txt をインポートする。
 
-### 上記手順の設定内容
+#### 上記手順の設定内容
 
 * `半角/全角`, `無変換`, `変換`, `カタカナひらがな` のキーコマンドを削除する。
 * IMEオンオフのキーコマンドを削除する。
 
-## 3. keyd
+### 3. keyd
 
 1. `sudo systemctl enable keyd`
 2. 設定ファイルを配置する。: `sudo cp default.conf /etc/keyd/default.conf`
 3. `sudo systemctl restart keyd`
 
-## 4. keyd - アプリケーション固有
+### 4. keyd - アプリケーション固有
 
 1. `sudo usermod -aG keyd "$USER"`
 2. `mkdir ~/.config/keyd`
 3. `ln -sv "$(realpath app.conf)" "$HOME/.config/keyd/app.conf"`
+
+## Debug
+
+```
+sudo keyd monitor
+```

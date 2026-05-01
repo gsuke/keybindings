@@ -1,5 +1,13 @@
 # Gsuke Keybindings - Windows
 
+## Requirements
+
+`winget install Google.JapaneseIME RandyRants.SharpKeys AutoHotkey.AutoHotkey`
+
+* Google 日本語入力
+* SharpKeys
+* AutoHotkey
+
 ## 設定方法
 
 ### 1. Google 日本語入力
@@ -14,28 +22,31 @@
 * `無変換`, `変換` キーにIMEのオンオフを割り当てる。
 * `Shift` + `無変換`, `Shift` + `変換`, `カタカナひらがな` のキーコマンドを削除する。
 
-### 2. ChangeKey
+### 2. SharpKeys
 
-1. <https://satoshi3.sakura.ne.jp/f_soft/dw_win.htm> から ChangeKey 最新版をインストールする。
-2. ChgKey.exe と同じフォルダに、 chgkey.ini をコピーする。
-3. ChgKey.exe を「管理者として実行」する。
-4. ファイル > 名前をつけて保存したキー内容を読み込みます > main をクリックし、設定を読み込む。
-5. 登録 > 現在の設定内容で登録します をクリックし、再起動する。
+1. SharpKeysを起動する。
+2. 「Load keys...」を押下し、 `sharpkeys.skl` を読み込む。
+3. 「Write to Registry」
+4. 再起動する。
 
 ### 3. AutoHotkey
 
-1. <https://github.com/AutoHotkey/AutoHotkey/releases> から AutoHotkey をインストールする。
-2. main.ahk を実行する。
-3. エクスプローラーのアドレスバーに "shell:startup" と入力してスタートアップフォルダを開く。
-4. スタートアップフォルダにmain.ahkのショートカットを入れる。
+1. エクスプローラーのアドレスバーに "shell:startup" と入力してスタートアップフォルダを開く。
+2. スタートアップフォルダにmain.ahkのショートカットを入れる。
+3. main.ahk を実行する。
 
-## ChangeKey の設定内容メモ
+## SharpKeys の設定内容メモ
 
-| 変換設定                   | 内容               |
-| -------------------------- | ------------------ |
-| 1(0x0001) → 41(0x0029)    | Esc → 半角/全角   |
-| 41(0x0029) → 1(0x0001)    | 半角/全角 → Esc   |
-| 58(0x003a) → 29(0x001d)   | CapsLock → 左Ctrl |
-| 123(0x007b) → 101(0x0065) | 無変換 → F14      |
-| 121(0x0079) → 54(0x0036)  | 変換 → 右Shirt    |
-| 112(0x0070) → 54(0x0036)  | 変換 → 右Shift    |
+| 変換元                            | 変換先           |
+| --------------------------------- | ---------------- |
+| 半角/全角 ( \` )                  | Escape           |
+| Caps Lock                         | 左Ctrl           |
+| Escape                            | 半角/全角 ( \` ) |
+| 変換                              | F14              |
+| 無変換                            | F13              |
+| カタカナひらがなローマ字 (0x0070) | F14              |
+
+## Debug
+
+1. main.ahk の `KeyHistory` をアンコメントする。
+2. `Ctrl + r` でAutoHotkeyを再起動する。

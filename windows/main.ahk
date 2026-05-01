@@ -1,8 +1,9 @@
 ﻿#SingleInstance force
 
+; KeyHistory ; デバッグ用
+
 ; 関数のインポート
 #Include functions/EasyTrayTip.ahk
-#Include functions/SingleTap.ahk
 
 ; 起動メッセージ
 EasyTrayTip("gsuke/keybindings/windows/main.ahk を起動しました。")

@@ -1,22 +1,31 @@
-﻿; F14 -> 無変換
-; 右Shift -> 変換
+﻿; F13 → IMEオフ (無変換)
+~F13 Up:: {
+    if (A_PriorKey = "F13") {
+        Send("{vk1D}")
+    }
+}
 
-; 単押し
-~F14 Up:: SingleTap("F14", "{vk1D}") ; IMEオフ (無変換)
-~RShift Up:: SingleTap("RShift", "{vk1C}") ; IMEオン (変換)
+; F14 → IMEオン (変換) or Shift
+~F14:: Send "{Shift Down}"
+~F14 Up:: {
+    Send "{Shift up}"
+    if (A_PriorKey = "F14") {
+        Send("{vk1C}")
+    }
+}
 
 ; カーソル移動
-F14 & h:: Send("{Blind}{Left}")
-F14 & j:: Send("{Blind}{Down}")
-F14 & k:: Send("{Blind}{Up}")
-F14 & l:: Send("{Blind}{Right}")
-F14 & a:: Send("{Blind}{Home}")
-F14 & e:: Send("{Blind}{End}")
+F13 & h:: Send("{Blind}{Left}")
+F13 & j:: Send("{Blind}{Down}")
+F13 & k:: Send("{Blind}{Up}")
+F13 & l:: Send("{Blind}{Right}")
+F13 & a:: Send("{Blind}{Home}")
+F13 & e:: Send("{Blind}{End}")
 
 ; 入力
-F14 & Space:: Send("{Blind}{Enter}")
-F14 & vkBB:: Send("{Blind}{BackSpace}") ; 無変換 + セミコロン
-F14 & vkBA:: Send("{Blind}{Del}") ; 無変換 + コロン
+F13 & Space:: Send("{Blind}{Enter}")
+F13 & vkBB:: Send("{Blind}{BackSpace}") ; 無変換 + セミコロン
+F13 & vkBA:: Send("{Blind}{Del}") ; 無変換 + コロン
 
 ; その他
-F14 & r:: Reload ; スクリプトを再起動する
+F13 & r:: Reload ; スクリプトを再起動する
