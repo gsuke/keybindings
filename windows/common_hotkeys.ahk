@@ -1,13 +1,13 @@
 ﻿; F13 → IMEオフ (無変換)
-~F13 Up:: {
+F13 Up:: {
     if (A_PriorKey = "F13") {
         Send("{vk1D}")
     }
 }
 
 ; F14 → IMEオン (変換) or Shift
-~F14:: Send "{Shift Down}"
-~F14 Up:: {
+*F14:: Send "{Blind}{Shift Down}" ; F14入力がAHK外に漏れてしまうので、「*」で確実に捕獲する
+F14 Up:: {
     Send "{Shift up}"
     if (A_PriorKey = "F14") {
         Send("{vk1C}")
